@@ -1,0 +1,32 @@
+{
+  "buildOptions": {
+    "verbose": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "docs"
+  ],
+  "exclude": [
+    "node_modules/",
+    "out/",
+    "src/**/*.spec.ts",
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "outDir": "out",
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "typeRoots": [
+      "node_modules/@types",
+      "@types"
+    ],
+  }
+}

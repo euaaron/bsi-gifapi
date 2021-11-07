@@ -1,0 +1,8 @@
+# Paths to ignore
+node_modules/
+coverage/
+out/
+
+# Files to ignore
+yarn.lock
+.env
