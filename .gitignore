@@ -4,5 +4,4 @@ coverage/
 out/
 
 # Files to ignore
-yarn.lock
 .env

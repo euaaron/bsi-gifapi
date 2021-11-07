@@ -6,36 +6,27 @@ import { GiphyRouter } from '../giphy/routes';
 import { swaggerOptions } from '../shared/configs/swagger';
 
 export class Server {
-  private _server: Express;
-  private _instance: any;
+  private _instance: Express;
 
   constructor() {
-    this._server = express();
+    this._instance = express();
   }
 
   private loadMiddlewares() {
-    this._server.use(cors());
-    this._server.use(express.json());
+    this._instance.use(cors());
+    this._instance.use(express.json());
 
     const specs = swaggerJSDoc(swaggerOptions);
-    this._server.use('/', swaggerUi.serve, swaggerUi.setup(specs));
+    this._instance.use('/', swaggerUi.serve, swaggerUi.setup(specs));
   }
 
   private loadRoutes() {
-    this._server.use('/giphy', GiphyRouter());
+    this._instance.use('/giphy', GiphyRouter());
   }
 
   public load() {
     this.loadRoutes();
     this.loadMiddlewares();
-    return this._server;
-  }
-
-  public stop() {
-    if (this._instance) {
-      return this._instance.close((err: any) => {
-        process.exit(err ? 1 : 0);
-      });
-    }
+    return this._instance;
   }
 }

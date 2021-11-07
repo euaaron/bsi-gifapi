@@ -9,10 +9,6 @@ describe('Giphy Route', () => {
     server = new Server();
   });
 
-  afterAll(() => {
-    server.stop();
-  });
-
   it('should be acessible', async () => {
     return request(server.load()).get('/giphy').then(response => {
       expect(response.status).toBe(200);
