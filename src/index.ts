@@ -10,3 +10,5 @@ const { PORT, HOST } = Config;
 api.listen(PORT, () => {
   console.log(`Server running at ${HOST}:${PORT}/`);
 });
+
+export default api;
