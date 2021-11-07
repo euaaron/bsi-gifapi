@@ -67,4 +67,4 @@ jobs:
       with:
           branch: gh-pages # The branch the action should deploy to.
           folder: out
-          ssh-key: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
