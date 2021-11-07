@@ -8,10 +8,6 @@ describe('Server', () => {
     server = new Server();
   });
 
-  afterAll(() => {
-    server.stop();
-  });
-
   it('should start', async () => {
     return request(server.load()).get('/').then(response => {
       expect(response.status).toBe(200);

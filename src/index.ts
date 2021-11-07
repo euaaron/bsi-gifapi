@@ -5,6 +5,8 @@ import { Config } from './shared/configs/env';
 const server = new Server();
 const api: Express = server.load();
 
-api.listen(Config.PORT, () => {
-  console.log(`Server running at ${Config.HOST}:${Config.PORT}/`);
+const { PORT, HOST } = Config;
+
+api.listen(PORT, () => {
+  console.log(`Server running at ${HOST}:${PORT}/`);
 });
