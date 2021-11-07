@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: '16'
         cache: 'yarn'
-        cache-dependency-path: './yarn.lock'
+        cache-dependency-path: '**/yarn.lock'
     - run: yarn
     - run: yarn test
   build:
@@ -37,7 +37,7 @@ jobs:
       with:
         node-version: '16'
         cache: 'yarn'
-        cache-dependency-path: './yarn.lock'
+        cache-dependency-path: '**/yarn.lock'
     - run: yarn
     - run: yarn build
   deploy:
