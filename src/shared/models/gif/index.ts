@@ -7,5 +7,5 @@ export type GifModel = {
     preview: string;
     downsized: string;
     original: string;
-  }
-}
+  };
+};
