@@ -8,7 +8,7 @@
     "yarn": "1.22.x"
   },
   "scripts": {
-    "prebuild" : "rimraf -f ./out",
+    "prebuild": "rimraf -f ./out",
     "build": "tsc",
     "postbuild": "copyfiles Procfile ./out/ && copyfiles public/* ./out/",
     "prestart": "yarn build",
@@ -50,6 +50,8 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "reflect-metadata": "^0.1.13",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6"
   }

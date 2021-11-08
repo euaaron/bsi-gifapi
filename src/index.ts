@@ -1,4 +1,6 @@
 import { Express } from 'express';
+import 'express-async-errors';
+import 'reflect-metadata';
 import { Server } from './server';
 import { Config } from './shared/configs/env';
 
