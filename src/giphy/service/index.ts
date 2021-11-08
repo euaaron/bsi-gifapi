@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { Config } from '../../shared/configs/env';
-import { ApiError } from '../../shared/models/error';
 import { GifModel } from '../../shared/models/gif';
 import { IApiService } from '../../shared/services/api';
 import { IGiphyDto } from '../dto';
@@ -16,7 +15,7 @@ export class GiphyService implements IApiService {
     private http = axios,
     public url: string = Config.API.GIPHY.URL,
     public key: string = Config.API.GIPHY.KEY,
-    public limit: number = Config.API.GIPHY.LIMIT
+    public limit: number = Config.API.GIPHY.LIMIT,
   ) {}
 
   public async get(params: IGiphyParams): Promise<GifModel[]> {
@@ -40,7 +39,7 @@ export class GiphyService implements IApiService {
           resolve(body);
         })
         .catch(err => {
-          throw new ApiError('Internal Server Error', 500);
+          reject(err);
         });
     });
   }
@@ -56,14 +55,14 @@ export class GiphyService implements IApiService {
         },
       })
         .then(response => {
-          if(response.data) {
+          if (response.data) {
             resolve(response.data);
           } else {
-            throw new ApiError('Could not find any GIF', 404);
+            reject(response.data);
           }
         })
         .catch(error => {
-          throw new ApiError('Internal Server Error', 500);
+          reject(error);
         });
     });
   }
