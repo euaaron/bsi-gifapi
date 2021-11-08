@@ -9,14 +9,14 @@
   ],
   "exclude": [
     "node_modules/",
-    "out/",
+    "api/",
     "src/**/*.spec.ts",
   ],
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
     "strict": true,
-    "outDir": "out",
+    "outDir": "api",
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,

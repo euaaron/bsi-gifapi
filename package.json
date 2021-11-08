@@ -1,17 +1,17 @@
 {
   "name": "giphy-api",
   "version": "1.0.0",
-  "main": "out/index.js",
+  "main": "api/index.js",
   "license": "MIT",
   "engines": {
     "yarn": "1.22.x"
   },
   "scripts": {
-    "prebuild": "rimraf -f ./out",
-    "build": "babel src --extensions \".js,.ts\" --out-dir out --copy-files",
-    "postbuild": "rimraf -f ./out/**/*.spec.js",
+    "prebuild": "rimraf -f ./api",
+    "build": "babel src --extensions \".js,.ts\" --out-dir api --copy-files",
+    "postbuild": "rimraf -f ./api/**/*.spec.js",
     "prestart": "yarn build",
-    "start": "node out/index.js",
+    "start": "node api/index.js",
     "dev": "ts-node-dev src/index.ts",
     "lint": "eslint",
     "test": "jest"
