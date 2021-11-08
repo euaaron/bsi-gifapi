@@ -12,6 +12,14 @@
       {
         "url": "http://localhost:3000",
         "description": "API host"
+      },
+      {
+        "url": "http://intense-earth-78335.herokuapp.com",
+        "description": "Heroku Hostname"
+      },
+      {
+        "url": "https://gifapi.xsample.app",
+        "description": "Production Alias"
       }
     ],
     "tags": [
