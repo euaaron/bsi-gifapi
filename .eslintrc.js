@@ -1,23 +1,16 @@
 module.exports = {
-  settings: {
-    'import/resolver': {
-      typescript: {},
-    },
-  },
   env: {
-    browser: true,
-    es2021: true,
+    es6: true,
     node: true,
   },
   extends: [
-    'prettier',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',    
     'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 13,
+    ecmaVersion: 2018,
     sourceType: 'module',
     project: './tsconfig.json',
     tsconfigRootDir: './',
@@ -25,5 +18,30 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
+    'no-var-requires': 'off',
+    'no-new-require': 'off',
+    'global-require': 'warn',
+    'no-mixed-requires': 'off',
+    camelcase: 'off',
+    'prettier/prettier': 'error',
+    'class-methods-use-this': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '_',
+      },
+    ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        ts: 'never',
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
   },
 };

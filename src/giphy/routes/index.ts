@@ -1,5 +1,6 @@
 import express, { Router } from 'express';
-import { GifModel } from 'src/shared/models/gif';
+import { ApiError } from '../../shared/models/error';
+import { GifModel } from '../../shared/models/gif';
 import { GiphyService } from '../service';
 
 export function GiphyRouter(router: Router = express.Router()): Router {
@@ -29,8 +30,22 @@ export function GiphyRouter(router: Router = express.Router()): Router {
    *     responses:
    *       500:
    *         description: Internal server error
+   *         content:
+   *           application/json:
+   *              schema:
+   *                $ref: '#/components/schemas/ApiError'
+   *              example:
+   *                message: Internal Server Error
+   *                status: error
    *       404:
    *         description: Could not find any gifs from the providen Search Term.
+   *         content:
+   *           application/json:
+   *              schema:
+   *                $ref: '#/components/schemas/ApiError'
+   *              example:
+   *                message: Could not find any GIF
+   *                status: error
    *       200:
    *         description: Returns an array of GIFs containing id, title, provider and image urls.
    *         content:
@@ -41,6 +56,13 @@ export function GiphyRouter(router: Router = express.Router()): Router {
    *                  $ref: '#/components/schemas/Gif'
    * components:
    *   schemas:
+   *     ApiError:
+   *       type: object
+   *       properties:
+   *        message:
+   *          type: string
+   *        status:
+   *          type: string
    *     Gif:
    *       type: object
    *       properties:
@@ -78,11 +100,11 @@ export function GiphyRouter(router: Router = express.Router()): Router {
         if (data.length != 0) {
           res.status(200).json(data);
         } else {
-          res.status(404).send('Not found');
+          throw new ApiError('Could not find any GIF', 404);
         }
       })
       .catch(err => {
-        res.status(500).send(err);
+        throw new ApiError('Internal Server Error', 500);
       });
   });
 

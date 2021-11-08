@@ -4,5 +4,6 @@
   "removeComments": true,
   "bracketSameLine": true,
   "arrowParens": "avoid",
-  "singleQuote": true
+  "singleQuote": true,
+  "trailingComma": "all"
 }

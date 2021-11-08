@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "out/index.js",
   "license": "MIT",
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.22.x"
+  },
   "scripts": {
+    "prebuild" : "rimraf -f ./out",
     "build": "tsc",
     "postbuild": "copyfiles Procfile ./out/ && copyfiles public/* ./out/",
     "prestart": "yarn build",
@@ -13,6 +18,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
@@ -30,7 +36,9 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.3.1",
+    "openapi-types": "^9.3.0",
     "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
     "supertest": "^6.1.6",
     "ts-jest": "^27.0.7",
     "ts-node-dev": "^1.1.8",

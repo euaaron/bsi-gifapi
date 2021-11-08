@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Config } from '../../shared/configs/env';
+import { ApiError } from '../../shared/models/error';
 import { GifModel } from '../../shared/models/gif';
 import { IApiService } from '../../shared/services/api';
 import { IGiphyDto } from '../dto';
@@ -39,7 +40,7 @@ export class GiphyService implements IApiService {
           resolve(body);
         })
         .catch(err => {
-          reject(err);
+          throw new ApiError('Internal Server Error', 500);
         });
     });
   }
@@ -55,11 +56,14 @@ export class GiphyService implements IApiService {
         },
       })
         .then(response => {
-          const data = response.data;
-          resolve(data);
+          if(response.data) {
+            resolve(response.data);
+          } else {
+            throw new ApiError('Could not find any GIF', 404);
+          }
         })
         .catch(error => {
-          reject(error);
+          throw new ApiError('Internal Server Error', 500);
         });
     });
   }
