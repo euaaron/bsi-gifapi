@@ -2,7 +2,6 @@
 node_modules/
 coverage/
 api/
-.vercel/
 
 # Files to ignore
 .env

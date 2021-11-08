@@ -1,6 +1,6 @@
 ![Header](https://github.com/euaaron/bsi-gifapi/raw/main/assets/GIFAPI_Header.jpg)
 
-[![repo-size](https://img.shields.io/github/repo-size/euaaron/bsi-gifapi?style=flat-square)](#) [![version](https://img.shields.io/github/package-json/v/euaaron/bsi-gifapi?color=orange&style=flat-square)](#) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.md) [![last-commit](https://img.shields.io/github/last-commit/euaaron/bsi-gifapi?style=flat-square)](#) [![Vercel](https://vercelbadge.vercel.app/api/euaaron/bsi-gifapi?style=flat-square)](https://bsi-gifapi.vercel.app/)
+[![repo-size](https://img.shields.io/github/repo-size/euaaron/bsi-gifapi?style=flat-square)](#) [![version](https://img.shields.io/github/package-json/v/euaaron/bsi-gifapi?color=orange&style=flat-square)](#) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE.md) [![last-commit](https://img.shields.io/github/last-commit/euaaron/bsi-gifapi?style=flat-square)](#) [![Badge](https://img.shields.io/badge/-DEPLOYED-%237159c1?style=flat-square&logo=heroku)](http://gifapi.xsample.app/)
 
 ## About
 
