@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "postbuild": "copyfiles Procfile ./out/",
+    "postbuild": "copyfiles Procfile ./out/ && copyfiles public/* ./out/",
     "prestart": "yarn build",
     "start": "node out/index.js",
     "dev": "ts-node-dev src/index.ts",

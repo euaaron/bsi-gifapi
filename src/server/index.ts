@@ -13,11 +13,12 @@ export class Server {
   }
 
   private loadMiddlewares() {
+    this._instance.use(express.static('public'));
     this._instance.use(cors());
     this._instance.use(express.json());
 
     const specs = swaggerJSDoc(swaggerOptions);
-    this._instance.use('/', swaggerUi.serve, swaggerUi.setup(specs));
+    this._instance.use('/docs', swaggerUi.serve, swaggerUi.setup(specs));
   }
 
   private loadRoutes() {
