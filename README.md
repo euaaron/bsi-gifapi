@@ -1,4 +1,4 @@
-![Header](https://raw.githubusercontent.com/euaaron/bsi-gifapi/main/assets/GIFAPI_Header.jpg?token=AGJCZYUMGY5CILRK75RYEBDBSJRZU)
+![Header](https://github.com/euaaron/bsi-gifapi/raw/main/assets/GIFAPI_Header.jpg)
 
 [![repo-size](https://img.shields.io/github/repo-size/euaaron/bsi-gifapi?style=flat-square)](#) [![version](https://img.shields.io/github/package-json/v/euaaron/bsi-gifapi?color=orange&style=flat-square)](#) [![license](https://img.shields.io/github/license/euaaron/bsi-gifapi?style=flat-square)](LICENSE) [![last-commit](https://img.shields.io/github/last-commit/euaaron/bsi-gifapi?style=flat-square)](#) [![Vercel](https://vercelbadge.vercel.app/api/euaaron/bsi-gifapi?style=flat-square)](https://bsi-gifapi.vercel.app/)
 
