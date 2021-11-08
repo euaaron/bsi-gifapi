@@ -13,7 +13,7 @@ export const swaggerOptions: SwaggerOptions = {
     },
     servers: [
       {
-        url: `${Config.HOST}:${Config.PORT}`,
+        url: `${Config.API_HOST}:${Config.API_PORT}`,
         description: 'API host',
       }
     ],
